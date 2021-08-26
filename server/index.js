@@ -6,6 +6,7 @@ const app = express()
 app.use('/js', express.static(path.join(__dirname, '../client/main.js')))
 // app.use('/css', express.static(path.join(__dirname, '../client/main.css')))
 
+console.log(process.env.PORT)
 app.get('/', function(req,res){
     res.sendFile(path.join(__dirname, '../client/index.html'))
 })
