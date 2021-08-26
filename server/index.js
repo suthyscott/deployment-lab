@@ -4,10 +4,14 @@ const path = require('path')
 const app = express()
 
 app.use('/js', express.static(path.join(__dirname, '../client/main.js')))
-app.use('/css', express.static(path.join(__dirname, '../client/main.css')))
+// app.use('/css', express.static(path.join(__dirname, '../client/main.css')))
 
 app.get('/', function(req,res){
     res.sendFile(path.join(__dirname, '../client/index.html'))
+})
+
+app.get('/css', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/styles.css'))
 })
 
 // app.get('/js', (req,res)=>{
